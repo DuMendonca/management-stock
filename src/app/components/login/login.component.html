@@ -1,0 +1,17 @@
+<div class="container">
+    <form action="#" class="login-form">
+        <div class="mb-3">
+            <label for="inputUsername" class="form-label">Username</label>
+            <input class="form-control" name="username" aria-describedby="userHelp" [(ngModel)]="username">
+            <div id="userHelp" class="form-text">Informe o seu username</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="inputPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" aria-describedby="passwordHelp"
+                [(ngModel)]="password">
+            <div id="passwordHelp" class="form-text">Informe o sua password.</div>
+        </div>
+        <button (click)="login()" type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>

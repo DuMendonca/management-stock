@@ -1,0 +1,31 @@
+<div class="container mt-3">
+    <button type="button" class="btn btn-success" (click)="createNewSender()">New</button>
+    <br><br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Sender Id</th>
+          <th scope="col">Username</th>
+          <th scope="col">Fullname</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of senderList; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ item.senderId }}</td>
+          <td>{{ item.username }}</td>
+          <td>{{ item.fullname }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="removeSender(item.senderId)">
+              Remove <i class="bi bi-pencil"></i>
+            </button>
+            <button class="btn btn-warning" (click)="editSender(item.senderId)">
+              Edit <i class="bi bi-pencil"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

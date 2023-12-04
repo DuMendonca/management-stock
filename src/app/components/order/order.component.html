@@ -1,0 +1,47 @@
+<div class="container mt-3">
+  <button type="button" class="btn btn-success" (click)="createNewOrder()">New</button>
+  <br><br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Order Id</th>
+        <th scope="col">Order Status</th>
+        <th scope="col">Total Value</th>
+        <th scope="col">Sender Address</th>
+        <th scope="col">Recipient Address</th>
+        <th scope="col">Order Date</th>
+        <th scope="col">Products</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of orderList; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ item.orderId }}</td>
+        <td>{{ item.orderStatus.descriptionStatus}}</td>
+        <td>{{ item.orderTotalValue }}</td>
+        <td>{{ item.sender.addressSender.city}}, {{ item.sender.addressSender.road}}, {{
+          item.sender.addressSender.number}}</td>
+        <td>{{ item.recipient.addressRecipient.city}}, {{ item.recipient.addressRecipient.road}}, {{
+          item.recipient.addressRecipient.number}}</td>
+        <td>{{ item.orderDate }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let product of item.products">
+              {{ product.productName }}
+            </li>
+          </ul>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="removeOrder(item.orderId)">
+            Remove <i class="bi bi-pencil"></i>
+          </button>
+          <button class="btn btn-warning" (click)="editOrder(item.orderId)">
+            Edit <i class="bi bi-pencil"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
