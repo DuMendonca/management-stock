@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RecipientService } from '../../services/recipient/recipient.service';
+import { RecipientService } from '../../../services/recipient/recipient.service';
 import { HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipient',
@@ -15,7 +16,7 @@ export class RecipientComponent {
 
   recipientList:any[] = [];
   
-  constructor(private recipientService: RecipientService){}
+  constructor(private recipientService: RecipientService, private router:Router){}
 
   ngOnInit(): void {
     this.loadRecipients();
@@ -38,7 +39,7 @@ export class RecipientComponent {
   }
 
   createNewRecipient(){
-    console.log("Cadastrou");
+    this.router.navigate(['recipient/new']);
   }
 }
 

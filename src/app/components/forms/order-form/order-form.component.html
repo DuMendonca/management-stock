@@ -1,0 +1,36 @@
+<div class="container mt-4">
+    <h2>New Order</h2>
+    <form>
+        <div class="mb-3">
+            <label for="orderId" class="form-label">Order Id</label>
+            <input type="number" class="form-control" id="orderId" [(ngModel)]="order.orderId" name="orderId" required>
+        </div>
+        <div class="mb-3">
+            <label for="sender" class="form-label">Sender</label><br>
+            <select class="form-select" id="sender" [(ngModel)]="order.sender" name="sender" required>
+                <option *ngFor="let option of senderOptions" [value]="option">{{ option.senderId }} - {{
+                    option.senderName }}</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="recipient" class="form-label">Recipient</label><br>
+            <select class="form-select" id="recipient" [(ngModel)]="order.recipient" name="recipient" required>
+                <option *ngFor="let option of recipientOptions" [value]="option">{{ option.recipientId }} - {{
+                    option.recipientName }}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="product" class="form-label">Select a Product</label><br>
+            <select class="form-select" id="product" [(ngModel)]="selectedProducts" name="product" required>
+                <option *ngFor="let product of productOptions" [value]="product">{{ product.productName }}</option>
+            </select>
+            <button type="submit" class="btn btn-primary" (click)="addProductInOrder()">Add</button>
+        </div>
+        <div class="mb-3">
+            <label for="orderDate" class="form-label">Order Date</label>
+            <input type="date" class="form-control" id="orderDate" [(ngModel)]="order.orderDate" name="orderDate" required>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="saveOrder()">Create Order</button>
+    </form>
+</div>

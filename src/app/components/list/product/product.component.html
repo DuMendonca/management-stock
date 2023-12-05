@@ -5,18 +5,19 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Product Id</th>
-          <th scope="col">Username</th>
-          <th scope="col">Fullname</th>
-          <th scope="col">Actions</th>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Value</th>
+          <th scope="col">Weight</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of productList; let i = index">
           <th scope="row">{{ i + 1 }}</th>
           <td>{{ item.productId }}</td>
-          <td>{{ item.username }}</td>
-          <td>{{ item.fullname }}</td>
+          <td>{{ item.productName }}</td>
+          <td>{{ item.productValue }}</td>
+          <td>{{ item.productWeight }}</td>
           <td>
             <button class="btn btn-danger" (click)="removeProduct(item.prodcutId)">
               Remove <i class="bi bi-pencil"></i>

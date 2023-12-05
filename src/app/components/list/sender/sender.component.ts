@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SenderService } from '../../services/sender/sender.service';
+import { SenderService } from '../../../services/sender/sender.service';
 import { HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sender',
@@ -15,7 +16,7 @@ export class SenderComponent {
 
   senderList:any[] = [];
   
-  constructor(private senderService: SenderService){}
+  constructor(private senderService: SenderService, private router:Router){}
 
   ngOnInit(): void {
     this.loadSenders();
@@ -38,6 +39,6 @@ export class SenderComponent {
   }
 
   createNewSender(){
-    console.log("Cadastrou");
+    this.router.navigate(['sender/new']);
   }
 }

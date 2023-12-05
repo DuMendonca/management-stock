@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { OrderService } from '../../services/order/order.service';
-import { UserService } from '../../services/user/user.service';
+import { OrderService } from '../../../services/order/order.service';
+import { UserService } from '../../../services/user/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order',
@@ -16,7 +17,7 @@ export class OrderComponent {
 
   orderList:any[] = [];
 
-  constructor(private orderService: OrderService){}
+  constructor(private orderService: OrderService, private router:Router){}
 
   ngOnInit(): void {
     this.loadOrders();
@@ -39,6 +40,6 @@ export class OrderComponent {
   }
 
   createNewOrder(){
-    console.log("Cadastrou");
+    this.router.navigate(['order/new'])
   }
 }

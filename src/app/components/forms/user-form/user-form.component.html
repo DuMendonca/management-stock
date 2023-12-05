@@ -1,0 +1,23 @@
+<div class="container mt-4">
+    <h2>New User</h2>
+    <form>
+        <div class="mb-3">
+            <label for="userId" class="form-label">User Id</label>
+            <input type="text" class="form-control" id="userId" [(ngModel)]="user.userId" name="userId" required>
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" [(ngModel)]="user.username" name="username" required>
+        </div>
+        <div class="mb-3">
+            <label for="fullname" class="form-label">Fullname</label>
+            <input type="text" class="form-control" id="fullname" [(ngModel)]="user.fullname" name="fullname" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password"
+                required>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="saveUser()">Create Product</button>
+    </form>
+</div>

@@ -5,9 +5,11 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Recipient Id</th>
-          <th scope="col">Username</th>
-          <th scope="col">Fullname</th>
+          <th scope="col">Id</th>
+          <th scope="col">Recipient Name</th>
+          <th scope="col">RG</th>
+          <th scope="col">CPF</th>
+          <th scope="col">Address</th>
           <th scope="col">Actions</th>
         </tr>
       </thead>
@@ -15,8 +17,10 @@
         <tr *ngFor="let item of recipientList; let i = index">
           <th scope="row">{{ i + 1 }}</th>
           <td>{{ item.recipientId }}</td>
-          <td>{{ item.username }}</td>
-          <td>{{ item.fullname }}</td>
+          <td>{{ item.recipientName }}</td>
+          <td>{{ item.rg }}</td>
+          <td>{{ item.cpf }}</td>
+          <td>{{ item.addressRecipient.city }} - {{ item.addressRecipient.road }}, {{ item.addressRecipient.number }}</td>
           <td>
             <button class="btn btn-danger" (click)="removeRecipient(item.recipientId)">
               Remove <i class="bi bi-pencil"></i>

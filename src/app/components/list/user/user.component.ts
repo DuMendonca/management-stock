@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserService } from '../../services/user/user.service';
+import { UserService } from '../../../services/user/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -15,7 +16,7 @@ export class UserComponent {
     
     userList:any[] = [];
   
-    constructor(private userService: UserService){}
+    constructor(private userService: UserService, private router:Router){}
   
     ngOnInit(): void {
       this.loadUsers();
@@ -38,6 +39,6 @@ export class UserComponent {
     }
   
     createNewUser(){
-      console.log("Cadastrou");
+      this.router.navigate(['user/new']);
     }
 }

@@ -18,4 +18,29 @@ export class UserService {
   retrieveUsers(): Observable<any> {    
     return this.http.get<any>(`${this.apiUrl}/`);
   }
+
+   //Find By Id
+   retrieveUserById(userId: number): Observable<any> {    
+    return this.http.get<any>(`${this.apiUrl}/${userId}`);
+  }
+
+  // Create a new User
+  saveUser(user: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/`, user);
+  }
+
+  // Update a User
+  updateUser(user: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${user.id}`, user);
+  }
+
+  //Delete a User
+  deleteUserById(userId: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/${userId}`);
+  }
+
+  //Delete all Users
+  deleteAllUsers(): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/`);
+  }
 }

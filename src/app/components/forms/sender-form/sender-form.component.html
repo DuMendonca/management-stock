@@ -1,0 +1,42 @@
+<div class="container mt-4">
+    <h2>New Sender</h2>
+    <form>
+        <div class="mb-3">
+            <label for="senderId" class="form-label">Sender Id</label>
+            <input type="text" class="form-control" id="senderId" [(ngModel)]="sender.senderId" name="senderId"
+                required>
+        </div>
+        <div class="mb-3">
+            <label for="senderName" class="form-label">Sender Name</label>
+            <input type="text" class="form-control" id="senderName" [(ngModel)]="sender.senderName" name="senderName"
+                required>
+        </div>
+        <div class="mb-3">
+            <label for="cpf" class="form-label">CPF</label>
+            <input type="text" class="form-control" id="cpf" [(ngModel)]="sender.cpf" name="cpf"
+                pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" required>
+            <small class="form-text text-muted">Format: 123.456.789-01</small>
+        </div>
+        <div class="mb-3">
+            <label for="rg" class="form-label">RG</label>
+            <input type="text" class="form-control" id="rg" [(ngModel)]="sender.rg" name="rg" pattern="[0-9]{9}"
+                required>
+        </div>
+        <div class="mb-3">
+            <label for="city" class="form-label">City</label>
+            <input type="text" class="form-control" id="city" [(ngModel)]="sender.addressSender.city" name="city"
+                required>
+        </div>
+        <div class="mb-3">
+            <label for="road" class="form-label">Road</label>
+            <input type="text" class="form-control" id="road" [(ngModel)]="sender.addressSender.road" name="road"
+                required>
+        </div>
+        <div class="mb-3">
+            <label for="number" class="form-label">Number</label>
+            <input type="number" class="form-control" id="number" [(ngModel)]="sender.addressSender.number"
+                name="number" required>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="saveSender()">Create Sender</button>
+    </form>
+</div>
