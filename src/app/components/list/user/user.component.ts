@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { UserService } from '../../../services/user/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { NavigationComponent } from '../../navigation/navigation.component';
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, NavigationComponent],
   providers: [UserService],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
@@ -30,12 +31,29 @@ export class UserComponent {
       });
     }
   
-    editUser(UserId: number) {
-      console.log("editou");
+    editUser(userId: number) {
+      this.router.navigate([`user/${userId}/edit`]);
     }
   
-    removeUser(UserId: number) {
-      console.log("removeu");
+    removeAllUsers() {
+      this.userService.deleteAllUsers().subscribe(() => {
+        alert("All Users deleted successfullys!")
+        this.softReload();
+      });
+    }
+
+    removeUser(userId: number) {
+      this.userService.deleteUserById(userId).subscribe(() => {
+        alert("User deleted successfullys!")
+        this.softReload();
+      })
+    }
+
+    softReload() {
+      const currentUrl = this.router.url;
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigate([currentUrl]);
+      });
     }
   
     createNewUser(){

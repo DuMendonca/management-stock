@@ -23,12 +23,13 @@ export class OrderService {
 
   // Create a new order
   saveOrder(order: any): Observable<any> {
+    console.log(order);
     return this.http.post<any>(`${this.apiUrl}/`, order);
   }
 
   // Update a order
   updateOrder(order: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/${order.id}`, order);
+    return this.http.put<any>(`${this.apiUrl}/${order.orderId}`, order);
   }
 
   //Delete a order

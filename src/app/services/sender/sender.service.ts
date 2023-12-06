@@ -27,11 +27,12 @@ export class SenderService {
 
   // Update a Sender
   updateSender(sender: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/${sender.id}`, sender);
+    return this.http.put<any>(`${this.apiUrl}/${sender.recipientId}`, sender);
   }
 
   //Delete a Sender
-  deleteSenderById(senderId: any): Observable<any> {
+  deleteSenderById(senderId: number): Observable<any> {
+    console.log(senderId);
     return this.http.delete<any>(`${this.apiUrl}/${senderId}`);
   }
 

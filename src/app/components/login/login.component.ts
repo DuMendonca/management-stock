@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AppComponent } from '../../app.component';
 
 @Component({
   selector: 'app-login',
@@ -25,23 +26,20 @@ export class LoginComponent {
     private userService: UserService
   ) {}
 
-  login(): void {
-    console.log("Entrou");
-    
+  login(): void {    
     this.userService.validateLogin(this.username, this.password).subscribe(data => {
       console.log("Data" + data);
       this.isLoginValid = data
-    })
 
-    if (this.isLoginValid) {
-      alert('Login realizado com sucesso!');
-      this.cleanAuth();
-      this.router.navigate(["order"]);
+      if (this.isLoginValid) {
+        alert('Login realizado com sucesso!');
+        this.router.navigate(["order"]);
+      } else {
+        alert('Usuário ou senha inválidas!');
+      }
       
-    } else {
-      alert('Usuário ou senha inválidas!');
-    }
-
+      this.cleanAuth();
+    })
   }
   
   cleanAuth(): void {

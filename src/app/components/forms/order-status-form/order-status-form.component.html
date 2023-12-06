@@ -1,0 +1,14 @@
+<div class="container mt-4">
+    <h2>New Status</h2>
+    <form>
+        <div class="mb-3">
+            <label for="orderStatusId" class="form-label">Status Id</label>
+            <input type="text" class="form-control" id="orderStatusId" [(ngModel)]="status.orderStatusId" name="orderStatusId" required>
+        </div>
+        <div class="mb-3">
+            <label for="descriptionStatus" class="form-label">Description</label>
+            <input type="text" class="form-control" id="descriptionStatus" [(ngModel)]="status.descriptionStatus" name="descriptionStatus" required>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="saveStatus()">Create Status</button>
+    </form>
+</div>

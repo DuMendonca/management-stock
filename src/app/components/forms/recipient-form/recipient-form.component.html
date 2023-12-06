@@ -22,21 +22,7 @@
             <input type="text" class="form-control" id="rg" [(ngModel)]="recipient.rg" name="rg" pattern="[0-9]{9}"
                 required>
         </div>
-        <div class="mb-3">
-            <label for="city" class="form-label">City</label>
-            <input type="text" class="form-control" id="city" [(ngModel)]="recipient.addressRecipient.city" name="city"
-                required>
-        </div>
-        <div class="mb-3">
-            <label for="road" class="form-label">Road</label>
-            <input type="text" class="form-control" id="road" [(ngModel)]="recipient.addressRecipient.road" name="road"
-                required>
-        </div>
-        <div class="mb-3">
-            <label for="number" class="form-label">Number</label>
-            <input type="number" class="form-control" id="number" [(ngModel)]="recipient.addressRecipient.number"
-                name="number" required>
-        </div>
+        <app-address></app-address>
         <button type="submit" class="btn btn-primary" (click)="saveRecipient()">Create Recipient</button>
     </form>
 </div>

@@ -1,31 +1,33 @@
+<app-navigation></app-navigation>
 <div class="container mt-3">
-    <button type="button" class="btn btn-success" (click)="createNewUser()">New</button>
-    <br><br>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">User Id</th>
-          <th scope="col">Username</th>
-          <th scope="col">Fullname</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of userList; let i = index">
-          <th scope="row">{{ i + 1 }}</th>
-          <td>{{ item.userId }}</td>
-          <td>{{ item.username }}</td>
-          <td>{{ item.fullname }}</td>
-          <td>
-            <button class="btn btn-danger" (click)="removeUser(item.UserId)">
-              Remove <i class="bi bi-pencil"></i>
-            </button>
-            <button class="btn btn-warning" (click)="editUser(item.UserId)">
-              Edit <i class="bi bi-pencil"></i>
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <button type="button" class="btn btn-success" (click)="createNewUser()">New</button>
+  <button type="button" class="btn btn-danger" (click)="removeAllUsers()">Delete All</button>
+  <br><br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">User Id</th>
+        <th scope="col">Username</th>
+        <th scope="col">Fullname</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of userList; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ item.userId }}</td>
+        <td>{{ item.username }}</td>
+        <td>{{ item.fullname }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="removeUser(item.userId)">
+            Remove <i class="bi bi-pencil"></i>
+          </button>
+          <button class="btn btn-warning" (click)="editUser(item.userId)">
+            Edit <i class="bi bi-pencil"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

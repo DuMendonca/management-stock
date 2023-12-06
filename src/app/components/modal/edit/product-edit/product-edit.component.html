@@ -1,0 +1,19 @@
+<div class="container mt-3" *ngIf="product">
+    <h2>Edit Product: {{ product.productName }} - Product ID: {{ product.productId }}</h2>
+    <div class="mb-3">
+        <label for="productName" class="form-label">Product Name</label>
+        <input type="text" class="form-control" id="productName" [(ngModel)]="product.productName" name="productName"
+            required>
+    </div>
+    <div class="mb-3">
+        <label for="productWeight" class="form-label">Weight</label>
+        <input type="number" class="form-control" id="productWeight" [(ngModel)]="product.productWeight"
+            name="productWeight" required>
+    </div>
+    <div class="mb-3">
+        <label for="productValue" class="form-label">Price</label>
+        <input type="productValue" class="form-control" id="productValue" [(ngModel)]="product.productValue"
+            name="productValue" required>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="saveProduct()">Update Product</button>
+</div>

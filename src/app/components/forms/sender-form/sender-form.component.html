@@ -23,19 +23,7 @@
                 required>
         </div>
         <div class="mb-3">
-            <label for="city" class="form-label">City</label>
-            <input type="text" class="form-control" id="city" [(ngModel)]="sender.addressSender.city" name="city"
-                required>
-        </div>
-        <div class="mb-3">
-            <label for="road" class="form-label">Road</label>
-            <input type="text" class="form-control" id="road" [(ngModel)]="sender.addressSender.road" name="road"
-                required>
-        </div>
-        <div class="mb-3">
-            <label for="number" class="form-label">Number</label>
-            <input type="number" class="form-control" id="number" [(ngModel)]="sender.addressSender.number"
-                name="number" required>
+            <app-address></app-address>
         </div>
         <button type="submit" class="btn btn-primary" (click)="saveSender()">Create Sender</button>
     </form>

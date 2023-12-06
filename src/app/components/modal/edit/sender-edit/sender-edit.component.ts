@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-address',
+  selector: 'app-sender-edit',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './address.component.html',
-  styleUrl: './address.component.css'
+  templateUrl: './sender-edit.component.html',
+  styleUrl: './sender-edit.component.css'
 })
-export class AddressComponent {
+export class SenderEditComponent {
 
 }

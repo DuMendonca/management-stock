@@ -28,11 +28,11 @@ export class ProductService {
 
   // Update a product
   updateProduct(product: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/${product.id}`, product);
+    return this.http.put<any>(`${this.apiUrl}/${product.productId}`, product);
   }
 
   //Delete a product
-  deleteProduct(productId: number): Observable<any> {
+  deleteProductById(productId: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/${productId}`);
   }
 

@@ -1,0 +1,8 @@
+<div class="container mt-3" *ngIf="status">
+    <h2>Edit Status - ID: {{ status.orderStatusId }}</h2>
+    <div class="mb-3">
+        <label for="descriptionStatus" class="form-label">Description</label>
+        <input type="text" class="form-control" id="descriptionStatus" [(ngModel)]="status.descriptionStatus" name="username" required>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="saveStatus()">Update Status</button>
+</div>

@@ -1,32 +1,34 @@
+<app-navigation></app-navigation>
 <div class="container mt-3">
-    <button type="button" class="btn btn-success" (click)="createNewProduct()">New</button>
-    <br><br>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Id</th>
-          <th scope="col">Name</th>
-          <th scope="col">Value</th>
-          <th scope="col">Weight</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of productList; let i = index">
-          <th scope="row">{{ i + 1 }}</th>
-          <td>{{ item.productId }}</td>
-          <td>{{ item.productName }}</td>
-          <td>{{ item.productValue }}</td>
-          <td>{{ item.productWeight }}</td>
-          <td>
-            <button class="btn btn-danger" (click)="removeProduct(item.prodcutId)">
-              Remove <i class="bi bi-pencil"></i>
-            </button>
-            <button class="btn btn-warning" (click)="editProduct(item.prodcutId)">
-              Edit <i class="bi bi-pencil"></i>
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <button type="button" class="btn btn-success" (click)="createNewProduct()">New</button>
+  <button type="button" class="btn btn-danger" (click)="removeAllProducts()">Delete All</button>
+  <br><br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Value</th>
+        <th scope="col">Weight</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of productList; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ item.productId }}</td>
+        <td>{{ item.productName }}</td>
+        <td>{{ item.productValue }}</td>
+        <td>{{ item.productWeight }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="removeProduct(item.productId)">
+            Remove <i class="bi bi-pencil"></i>
+          </button>
+          <button class="btn btn-warning" (click)="editProduct(item.productId)">
+            Edit <i class="bi bi-pencil"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -31,11 +31,12 @@ export class UserService {
 
   // Update a User
   updateUser(user: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/${user.id}`, user);
+    return this.http.put<any>(`${this.apiUrl}/${user.userId}`, user);
   }
 
   //Delete a User
   deleteUserById(userId: number): Observable<any> {
+    console.log(userId);
     return this.http.delete<any>(`${this.apiUrl}/${userId}`);
   }
 

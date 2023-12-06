@@ -1,0 +1,17 @@
+<div class="container mt-3" *ngIf="user">
+    <h2>Edit User: {{ user.username }} - User ID: {{ user.userId }}</h2>
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" [(ngModel)]="user.username" name="username" required>
+    </div>
+    <div class="mb-3">
+        <label for="fullname" class="form-label">Fullname</label>
+        <input type="text" class="form-control" id="fullname" [(ngModel)]="user.fullname" name="fullname" required>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password"
+            required>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="saveUser()">Update User</button>
+</div>

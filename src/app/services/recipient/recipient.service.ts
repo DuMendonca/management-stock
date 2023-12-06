@@ -27,7 +27,7 @@ export class RecipientService {
 
   // Update a Recipient
   updateRecipient(recipient: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/${recipient.id}`, recipient);
+    return this.http.put<any>(`${this.apiUrl}/${recipient.recipientId}`, recipient);
   }
 
   //Delete a Recipient

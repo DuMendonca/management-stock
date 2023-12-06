@@ -1,35 +1,37 @@
+<app-navigation></app-navigation>
 <div class="container mt-3">
-    <button type="button" class="btn btn-success" (click)="createNewSender()">New</button>
-    <br><br>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Id</th>
-          <th scope="col">Sender Name</th>
-          <th scope="col">RG</th>
-          <th scope="col">CPF</th>
-          <th scope="col">Address</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of senderList; let i = index">
-          <th scope="row">{{ i + 1 }}</th>
-          <td>{{ item.senderId }}</td>
-          <td>{{ item.senderName }}</td>
-          <td>{{ item.rg }}</td>
-          <td>{{ item.cpf }}</td>
-          <td>{{ item.addressSender.city }} - {{ item.addressSender.road }}, {{ item.addressSender.number }}</td>
-          <td>
-            <button class="btn btn-danger" (click)="removeSender(item.senderId)">
-              Remove <i class="bi bi-pencil"></i>
-            </button>
-            <button class="btn btn-warning" (click)="editSender(item.senderId)">
-              Edit <i class="bi bi-pencil"></i>
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <button type="button" class="btn btn-success" (click)="createNewSender()">New</button>
+  <button type="button" class="btn btn-danger" (click)="removeAllSenders()">Delete All</button>
+  <br><br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Id</th>
+        <th scope="col">Sender Name</th>
+        <th scope="col">RG</th>
+        <th scope="col">CPF</th>
+        <th scope="col">Address</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of senderList; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ item.senderId }}</td>
+        <td>{{ item.senderName }}</td>
+        <td>{{ item.rg }}</td>
+        <td>{{ item.cpf }}</td>
+        <td>{{ item.addressSender.city }} - {{ item.addressSender.road }}, {{ item.addressSender.number }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="removeSender(item.senderId)">
+            Remove <i class="bi bi-pencil"></i>
+          </button>
+          <button class="btn btn-warning" (click)="editSender(item.senderId)">
+            Edit <i class="bi bi-pencil"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

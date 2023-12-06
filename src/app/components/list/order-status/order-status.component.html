@@ -1,1 +1,31 @@
-<p>order-status works!</p>
+<app-navigation></app-navigation>
+<div class="container mt-3">
+  <button type="button" class="btn btn-success" (click)="createNewStatus()">New</button>
+  <button type="button" class="btn btn-danger" (click)="removeAllStatus()">Delete All</button>
+  <br><br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Id</th>
+        <th scope="col">Description</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of statusList; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ item.orderStatusId }}</td>
+        <td>{{ item.descriptionStatus }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="removeStatus(item.orderStatusId)">
+            Remove <i class="bi bi-pencil"></i>
+          </button>
+          <button class="btn btn-warning" (click)="editStatus(item.orderStatusId)">
+            Edit <i class="bi bi-pencil"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
